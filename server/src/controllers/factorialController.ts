@@ -1,7 +1,7 @@
 import type { Response, Request } from "express";
 import { calculateFactorial } from "../models/factorialModel.js";
 
-export const getFactorial = (res: Response, req: Request) => {
+export const getFactorial = (req: Request, res: Response) => {
   
   const num = parseInt(req.query.num as string)
 
@@ -16,7 +16,7 @@ export const getFactorial = (res: Response, req: Request) => {
 
   } catch(err: any) {
 
-    res.status(400).json({error: "err.message"})
+    res.status(400).json({error: err.message})
 
   }
 

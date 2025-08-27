@@ -7,7 +7,7 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 
-app.use("/api/factorials", factorialRoutes)
+app.use("/api/factorial", factorialRoutes)
 
 app.get("/", (_req, res) => {
   res.send("Server is running");
